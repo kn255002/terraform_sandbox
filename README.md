@@ -1,4 +1,4 @@
-# terraform_sandbox
+# Terraform_sandbox
 
 We are adding Terraform test scripts in this repo.
 
