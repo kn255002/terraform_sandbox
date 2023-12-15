@@ -1,4 +1,4 @@
-# Terraform-Dec-2023
+# terraform_sandbox
 
 We are adding Terraform test scripts in this repo.
 
