@@ -154,10 +154,6 @@ output "alb_dns_name" {
 
 
 
-
-
-
-
 #module "EC2_instances" {
 #source = "./modules/EC2/"
 #}
