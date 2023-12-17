@@ -5,8 +5,8 @@
 ###################################################################################
 git --version		# Show you the Git version
 git config --list	# Show if sth already configured at Globally for you.
-git config --global user.name "kn255002"
-git config --global user.email "khurram.deutsch@yahoo.com"
+git config --global user.name "sn255002"
+git config --global user.email "kn_deutsch@yahoo.com"
 #git config --global http.sslverify false
 
 
@@ -25,15 +25,15 @@ There are many ways to access your Repository from CLI
 	With credentials based access you need to pass token instead of password.
 	
 	#####Below is token for SN###################
-		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
+		xxx_YBcuidOhxVCoQnB903AzXT00YZeBls3zxOGP
 	#############################################
 	
 
 
 2). HTTPS		https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
-	https://github.com/kn255002/terraform_sandbox.git
+	https://github.com/sn255002/terraform_sandbox.git
 	
-	git clone https://github.com/kn255002/terraform_sandbox
+	git clone https://github.com/sn255002/terraform_sandbox
 
 3). ssh-keygen for GitHub
 	https://docs.github.com/en/authentication/connecting-to-github-with-ssh
@@ -44,7 +44,7 @@ There are many ways to access your Repository from CLI
 
 	Cloning Remote Directory:	https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli&platform=linux
 	Make sure Repository already exists on Github-Web but there is not directory on local-FS.
-	git clone https://github.com/kn255002/terraform_sandbox	(https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+	git clone https://github.com/sn255002/terraform_sandbox	(https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
 
 
 	The above command download repository and also have .git directory with default branch.
@@ -64,8 +64,8 @@ There are many ways to access your Repository from CLI
 	
 	#You should check your origin (git config --list) 
 	#If you need to set github origin from https to ssh
-	#git remote add origin https://github.com/kn255002/terraform_sandbox.git
-	#git remote set origin git@github.com:kn255002/terraform_sandbox.git
+	#git remote add origin https://github.com/sn255002/terraform_sandbox.git
+	#git remote set origin git@github.com:sn255002/terraform_sandbox.git
 	#git log		#hashnumber generated: 9975b2e2b59d0d07cefeb60a9f277e485dd439d8 (HEAD -> main)
 
 	git push
