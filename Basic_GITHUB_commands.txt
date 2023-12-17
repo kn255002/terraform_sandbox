@@ -1,0 +1,82 @@
+###################################################################################
+#
+#	Github short summary notes,											17.12.2023
+#	
+###################################################################################
+git --version		# Show you the Git version
+git config --list	# Show if sth already configured at Globally for you.
+git config --global user.name "kn255002"
+git config --global user.email "khurram.deutsch@yahoo.com"
+#git config --global http.sslverify false
+
+
+####################################################################################
+#You creaet you Github account, logon, and create 1st Respository.
+#You are 1st-Time, Copying Remote/Web Repository on Your Disk Local-FS
+####################################################################################
+There are many ways to access your Repository from CLI
+	1). Credentials with Token,
+	2). HTTPs
+	3). SSH based key,and many more
+	
+
+1). You create token on GitHub->Settings->Developer Settings->OAUTH APPS->Token clasic, and generate token.
+	REMINDER:
+	With credentials based access you need to pass token instead of password.
+	
+	#####Below is token for SN###################
+		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
+	#############################################
+	
+
+
+2). HTTPS		https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+	https://github.com/kn255002/terraform_sandbox.git
+	
+	git clone https://github.com/kn255002/terraform_sandbox
+
+3). ssh-keygen for GitHub
+	https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+	
+	$ ssh -T git@github.com		#Verifying connection ssh with Github:	
+	$ ssh-add -l				#List down keys, if you have added your private key into SSH-Agent (Make sure SSH-Agent is running).
+	
+
+	Cloning Remote Directory:	https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=cli&platform=linux
+	Make sure Repository already exists on Github-Web but there is not directory on local-FS.
+	git clone https://github.com/kn255002/terraform_sandbox	(https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+
+
+	The above command download repository and also have .git directory with default branch.
+	git branch -v	shows branch name, where your files are existing on the Github-web branch.
+	
+	##	Switch to suiable branch.	git branch -M main | git checkout main | git checkout main | git checkout -b main
+
+	touch /var/terraform_sandbox/tst.txt	Add some files in this directory.
+	git add tst.txt
+	
+	#git add .						#Include everything in this dir
+	git add --all					#Include everything		
+	#git add --all :^/.terraform 	#Except terraform dir/files
+	#git reset terraform*			#Exclude file if name starts with terraform*
+	
+	git commit -m "Add a comment for your info"		#Commit guaranted to take your data to Git internal staging and assigns you hashnumber.
+	
+	#You should check your origin (git config --list) 
+	#If you need to set github origin from https to ssh
+	#git remote add origin https://github.com/kn255002/terraform_sandbox.git
+	#git remote set origin git@github.com:kn255002/terraform_sandbox.git
+	#git log		#hashnumber generated: 9975b2e2b59d0d07cefeb60a9f277e485dd439d8 (HEAD -> main)
+
+	git push
+	#git push -u terraform_sandbox main		#You mentioned which branch to use (main/master/any speical branch).
+	#git push -u terraform_sandbox --all
+	#git push --set-upstream terraform_sandbox HEAD
+	
+		
+################### Pull Repository on Your local-FS in existing directory###############
+	git config --list	#Check your git session configuration and set accordingly.
+	git pull
+
+
+
