@@ -29,7 +29,7 @@ restrict_public_buckets = true
 
 ###--4  Creating dynamodb table to log locking.
 resource "aws_dynamodb_table" "terraform_locks" {
-name = "terraform-up-and-running-locks"
+name = "terraform-up-and-running-locks-tbl"
 billing_mode = "PAY_PER_REQUEST"
 hash_key = "LockID"
 attribute {
@@ -41,13 +41,22 @@ type = "S"
 ###--4  Storing State remotely on AWS-S3
 
 terraform {
-backend "s3" {
-# Replace this with your bucket name!
-bucket = "terraform-up-and-running-state-17122023"
-key = "global/s3/terraform.tfstate"
-region = "eu-central-1"	#Variable isn't acceptable in Terraform block
-# Replace this with your DynamoDB table name!
-dynamodb_table = "terraform-up-and-running-locks"
-encrypt = true
+  backend "s3" {
+    # Replace this with your bucket name!
+    bucket = "terraform-up-and-running-state-17122023"
+    key = "global/s3/terraform.tfstate"
+    region = "eu-central-1"	#Variable isn't acceptable in Terraform block
+    # Replace this with your DynamoDB table name!
+    dynamodb_table = "terraform-up-and-running-locks-tbl"
+    encrypt = true
+  }
 }
+
+output "s3_bucket_arn" {
+value = aws_s3_bucket.terraform_state.arn
+description = "The ARN of the S3 bucket"
+}
+output "dynamodb_table_name" {
+value = aws_dynamodb_table.terraform_locks.name
+description = "The name of the DynamoDB table"
 }
