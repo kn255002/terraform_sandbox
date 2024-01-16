@@ -8,7 +8,7 @@ variable "server_port" {
 }
 
 variable "ami" {
-  type = string
+  # type = string
 }
 variable "instance_type" {
   type = string
