@@ -7,12 +7,12 @@ terraform {
       version = ">=5.31.0"
     }
     google = {
-      }
-                    }
-  backend "local"{
-      path="terraform.tfstate"
     }
   }
+  backend "local" {
+    path = "terraform.tfstate"
+  }
+}
 ############################Now you add provider block###############
 provider "aws" { #Provider related configuration.
   region = var.region
