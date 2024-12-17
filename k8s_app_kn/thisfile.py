@@ -4,7 +4,7 @@
 #
 #Author: Khurram Nazir
 #Date: 26.02.2024 update: 17.12.2024
-
+#!/usr/bin/python
 print("Application is running from container.")
 print("Press '0' to exit.")
 
