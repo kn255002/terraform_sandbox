@@ -3,11 +3,14 @@
 #
 #
 #Author: Khurram Nazir
-#Date: 26.02.2024
+#Date: 26.02.2024 update: 17.12.2024
 
-import datetime
+print("Application is running from container.")
+print("Press '0' to exit.")
 
-today_date = datetime.date.today().strftime("%Y-%m-%d")
-print(f"This info comes from Python based application running in a container {today_date}")
+while True:
+    user_input = input()
+    if user_input == '0':
+        break
 
 
